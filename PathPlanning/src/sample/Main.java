@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        // Create a canvas and set its dimensions
+        
         Canvas canvas = new Canvas(540, 270);
 
 
@@ -38,10 +38,10 @@ public class Main extends Application {
         drawPath(gc, nodes, path,10);
 
 
-        // Create a new scene and add the canvas to it
+        
         Scene scene = new Scene(new StackPane(canvas), 540, 270);
 
-        // Set the stage's title and scene, and show the stage
+        
         primaryStage.setTitle("Map Display");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -67,7 +67,7 @@ public class Main extends Application {
         }
     }
     public void drawPath(GraphicsContext gc, List<Node> nodes, List<Node> path, int scale) {
-        // Draw the nodes
+        
         for (Node node : nodes) {
             if (isOccupied(node.x, node.y)) {
                 gc.setFill(Color.BLACK);
@@ -77,7 +77,7 @@ public class Main extends Application {
             gc.fillOval(node.x * 10, node.y * 10, scale, scale);
         }
 
-        // Draw the path
+        
         gc.setStroke(Color.BLUE);
         gc.setLineWidth(2);
         gc.beginPath();
@@ -100,21 +100,21 @@ public class Main extends Application {
         return null;
     }
     public boolean isOccupied(int x, int y) {
-        // Define a list of rectangles representing obstacles on the field
+        
         List<Rectangle> obstacles = new ArrayList<>();
         obstacles.add(new Rectangle(10, 10, 4, 3)); // First Obstacle
         obstacles.add(new Rectangle(30, 12, 4, 4)); // Second Obstacle
         obstacles.add(new Rectangle(0, 0, 54, 5)); // Third Obstacle
         obstacles.add(new Rectangle(0, 16, 50, 11)); // Third Obstacle
 
-        // Check if the point (x, y) lies within any of the rectangles in the list
+        
         for (Rectangle obstacle : obstacles) {
             if (obstacle.contains(x, y)) {
                 return true;
             }
         }
 
-        // If the point is not within any obstacle, it is not occupied
+        
         return false;
     }
     public List<Node> createGraph() {
