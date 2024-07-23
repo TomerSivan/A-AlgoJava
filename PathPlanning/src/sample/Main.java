@@ -108,10 +108,10 @@ public class Main extends Application {
      */
     public boolean isOccupied(int x, int y) {
         List<Rectangle> obstacles = new ArrayList<>();
-        obstacles.add(new Rectangle(10, 10, 4, 3)); // First Obstacle
-        obstacles.add(new Rectangle(30, 12, 4, 4)); // Second Obstacle
+        obstacles.add(new Rectangle(10, 6, 4, 28)); // First Obstacle
+        obstacles.add(new Rectangle(30, 12, 4, 10)); // Second Obstacle
         obstacles.add(new Rectangle(0, 0, 54, 5)); // Third Obstacle
-        obstacles.add(new Rectangle(0, 16, 50, 11)); // Fourth Obstacle
+        obstacles.add(new Rectangle(0, 16, 50, 12)); // Fourth Obstacle
 
         for (Rectangle obstacle : obstacles) {
             if (obstacle.contains(x, y)) {
